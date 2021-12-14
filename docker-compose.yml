@@ -1,0 +1,31 @@
+version: "3.5"
+
+services:
+  java-rest-service:
+    image: dwinn/java-rest-service:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+      - "5006:5005"
+    environment:
+      - DB_URL=jdbc:mysql://mysql-db:3306/items
+      - JVM_OPTIONS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005
+    depends_on:
+      mysql-db:
+        condition: service_healthy
+
+
+  mysql-db:
+    container_name: mysqldb
+    image: mysql:5
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: items123
+      MYSQL_DATABASE: items
+    healthcheck:
+      test: ["CMD-SHELL", "mysql -pitems123 -e 'select 1'"]
+      interval: 5s
+      retries: 50
