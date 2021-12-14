@@ -10,6 +10,9 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * Unit tests for ItemController.
+ */
 @RunWith(SpringRunner.class)
 @WebMvcTest(ItemController.class)
 public class ItemControllerTest {
