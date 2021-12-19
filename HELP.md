@@ -1,8 +1,6 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.dwinn.java-rest-service' is invalid and this project uses 'com.dwinn.javarestservice' instead.
-
 # Getting Started
 
 ### Reference Documentation
