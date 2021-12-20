@@ -13,9 +13,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * <description>.
+ * Swagger config.
  *
- * @author David Winn (dwinn@turnitin.com)
+ * @author David Winn
  */
 @Configuration
 public class SwaggerConfig {
@@ -24,7 +24,7 @@ public class SwaggerConfig {
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("com.dwinn.javarestservice"))
+				.apis(RequestHandlerSelectors.basePackage("com.dwinn.ffxivitemdatabase"))
 				.paths(PathSelectors.any())
 				.build()
 				.apiInfo(apiInfo());
@@ -32,8 +32,8 @@ public class SwaggerConfig {
 
 	private ApiInfo apiInfo() {
 		return new ApiInfo(
-				"Java REST API",
-				"API's to get and store an item in a database.",
+				"FFXIV Item Database API",
+				"API to get and store an item in a database.",
 				"",
 				"",
 				new Contact("David Winn", "https://github.com/dwinn", ""),

@@ -1,10 +1,13 @@
 package com.dwinn.ffxivitemdatabase.controller;
 
+import java.util.concurrent.CompletableFuture;
+
 import javax.validation.Valid;
 
-import com.dwinn.ffxivitemdatabase.dto.Item;
+import com.dwinn.ffxivitemdatabase.dto.ItemResponse;
 import com.dwinn.ffxivitemdatabase.service.ItemService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,20 +23,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class ItemController {
 
-	private final ItemService itemService;
-
-	public ItemController(ItemService itemService) {
-		this.itemService = itemService;
-	}
+	@Autowired
+	private ItemService itemService;
 
 	@PostMapping(value = "/item", consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.CREATED)
-	public void createItem(@Valid @RequestBody Item item) {
+	public void createItem(@Valid @RequestBody ItemResponse item) {
 		itemService.createItem(item);
 	}
 
 	@GetMapping(value = "/item/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public Item getItem(@PathVariable("id") int id) {
+	public CompletableFuture<ItemResponse> getItem(@PathVariable("id") int id) {
 		return itemService.getItem(id);
 	}
 

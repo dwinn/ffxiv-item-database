@@ -1,5 +1,6 @@
 package com.dwinn.ffxivitemdatabase.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -9,11 +10,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * <description>.
  *
- * @author David Winn (dwinn@turnitin.com)
+ * @author David Winn
  */
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Item {
+public class ItemResponse {
 
 	@JsonProperty("ID")
 	private int id;
@@ -28,8 +29,8 @@ public class Item {
 	private int levelItem;
 
 	@JsonProperty("ClassJobCategory")
-	private List<ClassJob> classJobCategory;
+	private ClassJob classJobCategory;
 
-	@JsonProperty("ID")
+	@JsonProperty("Icon")
 	private String icon;
 }

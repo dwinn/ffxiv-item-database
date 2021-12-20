@@ -1,6 +1,6 @@
 spring:
   application:
-    name: Item Database
+    name: ItemResponse Database
   liquibase:
     enabled: true
     change-log: classpath:/db/changelog/changeLog.xml
@@ -26,3 +26,7 @@ spring:
 
 server:
   shutdown: graceful
+
+
+api:
+  url: https://xivapi.com

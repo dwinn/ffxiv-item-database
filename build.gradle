@@ -21,6 +21,10 @@ dependencies {
 	implementation 'io.springfox:springfox-boot-starter:3.0.0'
 	implementation 'io.springfox:springfox-swagger-ui:3.0.0'
 	runtimeOnly 'mysql:mysql-connector-java'
+
+	// Async Http Client.
+	implementation 'org.asynchttpclient:async-http-client:2.12.3'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
 	testImplementation 'org.junit.jupiter:junit-jupiter-api'

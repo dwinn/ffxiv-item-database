@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 /**
  * Data access for the {@link ItemEntity}, using {@link CrudRepository}.
  *
- * @author David Winn (dwinn@turnitin.com)
+ * @author David Winn
  */
 @Repository
 public interface ItemRepository extends CrudRepository<ItemEntity, Integer> {

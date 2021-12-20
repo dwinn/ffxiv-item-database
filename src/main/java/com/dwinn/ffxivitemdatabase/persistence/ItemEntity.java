@@ -6,9 +6,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * This entity represents Item table.
+ * This entity represents ItemResponse table.
  *
- * @author David Winn (dwinn@turnitin.com)
+ * @author David Winn
  */
 @Entity
 @Table(name = "item")

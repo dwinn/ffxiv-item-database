@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 /**
  * Hikari Data source config.
  *
- * @author David Winn (dwinn@turnitin.com)
+ * @author David Winn
  */
 @Component
 public class DataSourceConfig {
