@@ -69,7 +69,9 @@ public class ItemService {
 		return null;
 	}
 
-	public Boolean deleteItem(int id) {
-		return null;
+	public void deleteItem(int id) {
+		itemRepository.deleteById(id);
+
+		// Maybe return a deletion success message, if exists.
 	}
 }

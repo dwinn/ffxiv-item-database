@@ -43,8 +43,8 @@ public class ItemController {
 	}
 
 	@DeleteMapping(value = "/item/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public Boolean deleteItem(@PathVariable("id") int id) {
-		return itemService.deleteItem(id);
+	public void deleteItem(@PathVariable("id") int id) {
+		itemService.deleteItem(id);
 	}
 
 	// Helpful for debugging bad requests in end points.
