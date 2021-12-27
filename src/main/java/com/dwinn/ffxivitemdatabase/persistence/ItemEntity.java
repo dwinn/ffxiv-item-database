@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 /**
  * This entity represents ItemResponse table.
  *
@@ -15,6 +17,7 @@ import javax.persistence.Table;
 public class ItemEntity {
 
 	@Id
+	@Column(name = "id")
 	private int id;
 
 	@Column(name = "name")
@@ -29,7 +32,12 @@ public class ItemEntity {
 	@Column(name = "class_job_category")
 	private String classJobCategory;
 
+	@Column(name = "icon")
 	private String icon;
+
+	public ItemEntity() {
+		// Default constructor for hibernate.
+	}
 
 	public ItemEntity(int id, String name, int levelEquip, int levelItem, String classJobCategory, String icon) {
 		this.id = id;
@@ -44,53 +52,47 @@ public class ItemEntity {
 		return id;
 	}
 
-	public ItemEntity setId(int id) {
+	public void setId(int id) {
 		this.id = id;
-		return this;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public ItemEntity setName(String name) {
+	public void setName(String name) {
 		this.name = name;
-		return this;
 	}
 
 	public int getLevelEquip() {
 		return levelEquip;
 	}
 
-	public ItemEntity setLevelEquip(int levelEquip) {
+	public void setLevelEquip(int levelEquip) {
 		this.levelEquip = levelEquip;
-		return this;
 	}
 
 	public int getLevelItem() {
 		return levelItem;
 	}
 
-	public ItemEntity setLevelItem(int levelItem) {
+	public void setLevelItem(int levelItem) {
 		this.levelItem = levelItem;
-		return this;
 	}
 
 	public String getClassJobCategory() {
 		return classJobCategory;
 	}
 
-	public ItemEntity setClassJobCategory(String classJobCategory) {
+	public void setClassJobCategory(String classJobCategory) {
 		this.classJobCategory = classJobCategory;
-		return this;
 	}
 
 	public String getIcon() {
 		return icon;
 	}
 
-	public ItemEntity setIcon(String icon) {
+	public void setIcon(String icon) {
 		this.icon = icon;
-		return this;
 	}
 }

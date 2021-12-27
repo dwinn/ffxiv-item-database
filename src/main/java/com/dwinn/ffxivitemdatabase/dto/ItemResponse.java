@@ -1,8 +1,5 @@
 package com.dwinn.ffxivitemdatabase.dto;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -33,4 +30,28 @@ public class ItemResponse {
 
 	@JsonProperty("Icon")
 	private String icon;
+
+	public int getId() {
+		return id;
+	}
+
+	public String getNameEn() {
+		return nameEn;
+	}
+
+	public int getLevelEquip() {
+		return levelEquip;
+	}
+
+	public int getLevelItem() {
+		return levelItem;
+	}
+
+	public ClassJob getClassJobCategory() {
+		return classJobCategory;
+	}
+
+	public String getIcon() {
+		return icon;
+	}
 }

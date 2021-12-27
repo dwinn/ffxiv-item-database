@@ -38,7 +38,6 @@ public class ApiClient {
 		this.asyncHttpClient = asyncHttpClient;
 		this.objectMapper = objectMapper;
 		this.apiUrl = apiUrl;
-
 	}
 
 	public CompletableFuture<ItemResponse> getItemData(int itemId) {
