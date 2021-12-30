@@ -1,5 +1,7 @@
 package com.dwinn.ffxivitemdatabase.controller;
 
+import java.util.concurrent.CompletableFuture;
+
 import javax.validation.Valid;
 
 import com.dwinn.ffxivitemdatabase.dto.ItemDetails;
@@ -45,6 +47,14 @@ public class ItemController {
 	@DeleteMapping(value = "/item/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public void deleteItem(@PathVariable("id") int id) {
 		itemService.deleteItem(id);
+	}
+
+	@PostMapping(value = "/item/direct",
+			consumes = MediaType.APPLICATION_JSON_VALUE,
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseStatus(HttpStatus.OK)
+	public CompletableFuture<ItemResponse> getItemFromApi(@Valid @RequestBody ItemRequest item) {
+		return itemService.getItemFromApi(item);
 	}
 
 	// Helpful for debugging bad requests in end points.

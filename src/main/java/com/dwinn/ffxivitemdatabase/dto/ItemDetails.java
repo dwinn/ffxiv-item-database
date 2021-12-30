@@ -41,4 +41,13 @@ public class ItemDetails {
 		this.classJobCategory = itemEntity.getClassJobCategory();
 		this.icon = itemEntity.getIcon();
 	}
+
+	public ItemDetails(int id, String nameEn, int levelEquip, int levelItem, String classJobCategory, String icon) {
+		this.id = id;
+		this.nameEn = nameEn;
+		this.levelEquip = levelEquip;
+		this.levelItem = levelItem;
+		this.classJobCategory = classJobCategory;
+		this.icon = icon;
+	}
 }

@@ -17,6 +17,9 @@ public class ItemRequest {
 	@JsonProperty("ID")
 	private int id;
 
+	public ItemRequest() {
+	}
+
 	// @JsonCreator is a newer method of doing the no arg constructor for deserialization.
 	@JsonCreator
 	public ItemRequest(int id) {

@@ -74,4 +74,8 @@ public class ItemService {
 
 		// Maybe return a deletion success message, if exists.
 	}
+
+	public CompletableFuture<ItemResponse> getItemFromApi(ItemRequest request) {
+		return apiClient.getItemData(request.getId());
+	}
 }
