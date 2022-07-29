@@ -54,4 +54,28 @@ public class ItemResponse {
 	public String getIcon() {
 		return icon;
 	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setNameEn(String nameEn) {
+		this.nameEn = nameEn;
+	}
+
+	public void setLevelEquip(int levelEquip) {
+		this.levelEquip = levelEquip;
+	}
+
+	public void setLevelItem(int levelItem) {
+		this.levelItem = levelItem;
+	}
+
+	public void setClassJobCategory(ClassJob classJobCategory) {
+		this.classJobCategory = classJobCategory;
+	}
+
+	public void setIcon(String icon) {
+		this.icon = icon;
+	}
 }

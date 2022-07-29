@@ -36,11 +36,11 @@ public class ItemService {
 	}
 
 	@Transactional
-	public void createItem(ItemRequest request) {
+	public CompletableFuture<Void> createItem(ItemRequest request) {
 
 		CompletableFuture<ItemResponse> response = apiClient.getItemData(request.getId());
 
-		response.whenComplete((result, ex) -> {
+		return response.handle((result, ex) -> {
 
 			if (ex != null) {
 				LOGGER.error("Error getting the item information.", ex);
@@ -55,6 +55,8 @@ public class ItemService {
 					result.getClassJobCategory().getNameEn(),
 					result.getIcon()
 			));
+
+			return null;
 		});
 	}
 

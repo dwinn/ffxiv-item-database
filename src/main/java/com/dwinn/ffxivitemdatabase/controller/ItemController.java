@@ -35,8 +35,8 @@ public class ItemController {
 
 	@PostMapping(value = "/item", consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.CREATED)
-	public void createItem(@Valid @RequestBody ItemRequest item) {
-		itemService.createItem(item);
+	public CompletableFuture<Void> createItem(@Valid @RequestBody ItemRequest item) {
+		return itemService.createItem(item);
 	}
 
 	@GetMapping(value = "/item/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
